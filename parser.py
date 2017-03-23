@@ -60,6 +60,7 @@ def parse_file( fname, edges, transform, screen, color ):
             add_edge( edges,
                       float(args[0]), float(args[1]), float(args[2]),
                       float(args[3]), float(args[4]), float(args[5]) )
+
         elif line =="circle":
             args =  lines[c + 1].strip().split(' ')
             if len(args) != 4:
@@ -80,7 +81,7 @@ def parse_file( fname, edges, transform, screen, color ):
                 print "bad bezier"
             else:
                 add_curve( edges, float(args[0]), float(args[1]), float(args[2]), float(args[3]), float(args[4]), float(args[5]), float(args[6]), float(args[7]), 0.01, "bezier" )
-                
+                 
         elif line == 'scale':
             #print 'SCALE\t' + str(args)
             t = make_scale(float(args[0]), float(args[1]), float(args[2]))
